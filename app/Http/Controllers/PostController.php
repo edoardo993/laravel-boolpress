@@ -8,6 +8,8 @@ use App\Post;
 
 use App\Author;
 
+use App\Comment;
+
 use App\Tag;
 
 class PostController extends Controller
@@ -20,7 +22,8 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return view('post.index', compact('posts'));
+        $comments = Comment::all();
+        return view('post.index', compact('posts', 'comments'));
     }
 
     /**

@@ -9,6 +9,7 @@
             <th scope="col">Body</th>
             <th scope="col">Author</th>
             <th scope="col">Tags</th>
+            <th scope="col">Comment/s</th>
         </tr>
         </thead>
         <tbody>
@@ -24,7 +25,12 @@
                         @foreach ($post->tags as $tag)
                             {{$tag->name}},
                         @endforeach
-
+                    </td>
+                    <td>
+                        @foreach ($post->comments as $comment)
+                            {{$comment->content}}<br><br>
+                        @endforeach
+                    </td>
                 </tr>
 
             @endforeach
