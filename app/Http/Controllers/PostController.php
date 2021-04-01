@@ -12,6 +12,10 @@ use App\Comment;
 
 use App\Tag;
 
+use App\Mail\PostCreated;
+
+use Illuminate\Support\Facades\Mail;
+
 class PostController extends Controller
 {
     /**
@@ -53,6 +57,8 @@ class PostController extends Controller
         $post->save();
 
         $post->tags()->attach($data['tags']);
+
+        Mail::to('gcqmlprq@netmail.tk')->send(new PostCreated($post));
 
         return redirect()->route('posts.index');
     }

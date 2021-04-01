@@ -30,7 +30,7 @@
 
         <div class="form-group">
 
-            <label for="tags[]">Tgas</label>
+            <label for="tags[]">Tags</label>
 
             <select multiple class="custom-select" name="tags[]">
 
